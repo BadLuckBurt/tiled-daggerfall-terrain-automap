@@ -1,3 +1,4 @@
 ../desert_dirt.tmx
 ../desert_grass.tmx
 ../desert_rock.tmx
+../desert_water.tmx

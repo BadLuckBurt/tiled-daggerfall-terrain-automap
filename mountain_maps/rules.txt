@@ -1,3 +1,4 @@
-../mountain_dirt.tmx
-../mountain_grass.tmx
-../mountain_rock.tmx
+../mountains_dirt.tmx
+../mountains_grass.tmx
+../mountains_rock.tmx
+../mountains_water.tmx

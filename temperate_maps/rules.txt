@@ -1,3 +1,4 @@
 ../temperate_dirt.tmx
 ../temperate_grass.tmx
 ../temperate_rock.tmx
+../temperate_water.tmx
