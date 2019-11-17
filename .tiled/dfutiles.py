@@ -19,22 +19,24 @@ class DfuTiles(Plugin):
 						tiles = []
 						for x in range(tileLayer.width()):
 							tileData = '{\n'
-							tileData += '\t"TileBitfield": 1,\n'
 							if tileLayer.cellAt(x, y).tile() != None:
 								cell = tileLayer.cellAt(x, y)
 								id = cell.tile().id()
+								bitfield = id
+								if (cell.flippedHorizontally == True):
+									bitfield |= 0x80
+								if (cell.flippedAntiDiagonally == True):
+									bitfield |= 0x40
+								tileData += '\t"TileBitfield": ' + str(bitfield) + ',\n'
 								tileData += '\t"TextureRecord": ' + str(id) + ',\n'
-								if cell.flippedHorizontally == True:
-									id = id + 2147483648
-									tileData += '\t"IsFlipped": true,\n'
-								else:
-									tileData += '\t"IsFlipped": false,\n'
-								#if cell.flippedVertically == True:
 								if cell.flippedAntiDiagonally == True:
-									id = id + 1073741824
-									tileData += '\t"IsRotated": true\n'
+									tileData += '\t"IsRotated": true,\n'
 								else:
-									tileData += '\t"IsRotated": false\n'
+									tileData += '\t"IsRotated": false,\n'
+								if cell.flippedHorizontally == True:
+									tileData += '\t"IsFlipped": true\n'
+								else:
+									tileData += '\t"IsFlipped": false\n'
 								tileData += '}'
 								tiles.append(tileData)
 							else:
