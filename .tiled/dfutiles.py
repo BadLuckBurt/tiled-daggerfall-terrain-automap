@@ -29,14 +29,14 @@ class DfuTiles(Plugin):
 									bitfield |= 0x40
 								tileData += '\t"TileBitfield": ' + str(bitfield) + ',\n'
 								tileData += '\t"TextureRecord": ' + str(id) + ',\n'
-								if cell.flippedHorizontally == True:
-									tileData += '\t"IsFlipped": true\n'
-								else:
-									tileData += '\t"IsFlipped": false\n'
 								if cell.flippedAntiDiagonally == True:
 									tileData += '\t"IsRotated": true,\n'
 								else:
 									tileData += '\t"IsRotated": false,\n'
+								if cell.flippedHorizontally == True:
+									tileData += '\t"IsFlipped": true\n'
+								else:
+									tileData += '\t"IsFlipped": false\n'
 								tileData += '}'
 								tiles.append(tileData)
 							else:
