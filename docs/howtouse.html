@@ -1,18 +1,306 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title></title></head><body><h1>tiled-daggerfall-terrain-automap</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<title>howtouse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
 
-<p>Basic setup to use Daggerfall terrain textures with <a href="https://www.mapeditor.org/">Tiled</a>&#39;s automapping feature</p>
+/* RESET
+=============================================================================*/
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>tiled-daggerfall-terrain-automap</h1>
+<p>Basic setup to use Daggerfall terrain textures with <a href="https://www.mapeditor.org/">Tiled</a>'s automapping feature</p>
 <h2>Introduction</h2>
-
-<p>This is a collection of files to aid with the creation of new Daggerfall terrain layouts using Tiled&#39;s automapping features.</p>
-
+<p>This is a collection of files to aid with the creation and editing of new and existing Daggerfall terrain layouts using Tiled's automapping features.</p>
 <h2>Setup</h2>
-
 <ol>
 <li>Download and install <a href="https://www.mapeditor.org/">Tiled 1.2.5</a></li>
 <li>Download and install <a href="https://www.dfworkshop.net/downloads/daggerfall-imaging/">Daggerfall Imaging 2</a></li>
-<li>Export Daggerfall&#39;s terrain textures to PNG images using Daggerfall Imaging 2
-
+<li>
+Export Daggerfall's terrain textures to PNG images using <code>Daggerfall Imaging 2</code>
 <ul>
 <li>TEXTURE.002 (Desert terrain Test)</li>
 <li>TEXTURE.003 (Desert Terrain Set Wint)</li>
@@ -24,134 +312,86 @@
 <li>TEXTURE.303 (Woodland Terrain Snow)</li>
 <li>TEXTURE.402 (swamp Terrain Set)</li>
 <li>TEXTURE.403 (Swamp Terrain Winter)</li>
-<li>TEXTURE.404 (swamp Terrain Set)<br></li>
-</ul></li>
-<li>Copy the resulting folders to the textures folder in this project (or use a symlink)</li>
+<li>TEXTURE.404 (swamp Terrain Set)  
+</li>
+</ul>
+</li>
+<li>Copy the resulting folders to the <code>textures</code> folder in this project (or use a symlink if you know how)</li>
+<li>Copy the <code>.tiled</code> folder from the project to your operating system's User folder.</li>
 </ol>
-
+<p><strong>ATTENTION WINDOWS USERS</strong></p>
+<p>On Windows, Tiled's Python scripting is disabled by default. In order to activate Python scripting for Tiled, go the following link for <a href="https://www.python.org/downloads/release/python-375/#windows-users">Python 3.7.5 releases</a> and download the Python version for the correct architecture (see below).</p>
+<p><strong>NOTE: Please ignore the NOTE section at the top of the download page that urges you to download the latest Python version. Just download the appropriate file to install 3.7.5</strong></p>
+<ul>
+<li>For Tiled's 64-bit version download the <code>Windows X86-64</code> version.</li>
+<li>For Tiled's 32-bit version, download the <code>Windows X86</code> version.</li>
+</ul>
+<p>Close Tiled, follow Python's installation instructions and make sure to add Python to the <code>Environment Variables</code> when prompted, otherwise Tiled won't detect the installation. After Python has been successfully installed, relaunch Tiled and go to <code>Edit &gt; Preferences</code>:</p>
+<p><img src="tiled_preferences.png" /></p>
+<p>A new window will appear with several tabs, select the <code>Plugins</code> tab and check for the Python plugin in the list:</p>
+<p><img src="plugins_python.png" /></p>
+<p>Make sure the box next to <code>python.dll</code> is ticked. If there is something wrong, the plugin will display a Stop-sign instead of the tickbox. If the box is already ticked, you're good to go.</p>
 <h2>Usage</h2>
-
-<p>Daggerfall has 4 types of terrain: desert, mountain, swamp and temperate. This projects contains corresponding folders that have been set up to use Tiled&#39;s automapping features.</p>
-
-<p>The folders follow this naming pattern: &lt;terrain&gt;_maps</p>
-
-<p>These folders have two files in them:</p>
-
+<p>Daggerfall has 4 types of terrain: <em>desert</em>, <em>mountain</em>, <em>swamp</em> and <em>temperate</em>. This projects contains corresponding folders that have been set up to use Tiled's automapping features.</p>
+<p>The folders follow this naming pattern: <code>&lt;terrain\&gt;_maps</code> and have two files in them:</p>
 <ol>
-<li>rules.txt</li>
-<li>&lt;terrain&gt;.tmx</li>
+<li><strong>rules.txt</strong></li>
+<li><strong>&lt;terrain&gt;.tmx</strong></li>
 </ol>
-
-<p>The rules.txt is used by Tiled to load the files used for automapping. You can read more about it here: <a href="https://doc.mapeditor.org/en/stable/manual/automapping/">Tiled Automapping</a></p>
-
-<p>The &lt;terrain&gt;.tmx file is a template that is configured to use the correct tileset and has the correct dimensions (16x16 tiles). It contains a single layer named &#39;terrain&#39;. The files referenced in the rules.txt need that layer to exist in order to take effect.</p>
-
-<p>If you want to create a new terrain, you can make a copy of this file and give it a new name or if you&#39;re familiar with Tiled, just load in the tileset (&lt;terrain&gt;.tsx) you want to use, create a new map and then save it to the appropriate &lt;terrain&gt;_maps folder. If you do create a new map, do <strong>NOT</strong> forget to rename the layer to &#39;terrain&#39;.</p>
-
+<p>The <code>rules.txt</code> is used by Tiled to load the files used for automapping. You can read more about it here: <a href="https://doc.mapeditor.org/en/stable/manual/automapping/">Tiled Automapping</a></p>
+<p>The <code>&lt;terrain&gt;.tmx</code> file is a template that is configured to use the correct tileset and has the correct dimensions (16x16 tiles). It contains a single layer named <code>terrain</code>. The files referenced in the rules.txt need that layer to exist in order to take effect.</p>
+<p>If you want to create a new terrain, you can make a copy of this file and give it a new name or if you're familiar with Tiled, just load in the tileset (<code>&lt;terrain&gt;.tsx</code>) you want to use, create a new map and then save it to the appropriate <code>&lt;terrain&gt;_maps</code> folder. If you do create a new map, do <strong>NOT</strong> forget to rename the layer to <code>terrain</code>.</p>
 <h3>Using AutoMapping</h3>
-
 <p>When using a tileset in Tiled that has rules defined for automapping, there are two ways you can use it. See the screenshot below on how to access these:</p>
-
-<p><img src="menu_automap.png" alt=""></p>
-
+<p><img src="menu_automap.png" /></p>
 <ol>
 <li><strong>AutoMap</strong>: Apply manually by pressing A when you are placing tiles. This will tell Tiled to check the current maptiles against the automapping rules and it will replace any pattern matched.</li>
-<li><strong>AutoMap While Drawing</strong>: Tick the &#39;AutoMap While Drawing&#39; box and Tiled will automically check the current map tiles against the automapping rules and again replace any pattern matched.</li>
+<li><strong>AutoMap While Drawing</strong>: Tick the 'AutoMap While Drawing' box and Tiled will automically check the current map tiles against the automapping rules and again replace any pattern matched.</li>
 </ol>
-
-<p>Automapping might interfere with specific layouts you want to make because the rules find a different match than what you&#39;re trying to create. If this happens, disable &#39;Automap While Drawing&#39; if active or do not press A while you are creating the layout you want. After the layout has been made, it&#39;s usually okay to press A again and map out other parts of your map.</p>
-
+<p>Automapping might interfere with specific layouts you want to make because the rules find a different match than what you're trying to create. If this happens, disable <code>Automap While Drawing</code> if active or do not press A while you are creating the layout you want. After the layout has been made, it's usually okay to press A again and map out other parts of your map.</p>
 <h3>Creating a map</h3>
-
 <ol>
 <li>Decide the type of terrain to use</li>
-<li>Go to the corresponding &lt;terrain&gt;_maps folder</li>
-<li>Make a copy of the &lt;terrain&gt;.tmx file in that folder or create a new map file from Tiled directly that used the correct tileset and save it to the &lt;terrain&gt;_maps folder.</li>
+<li>Go to the corresponding <code>&lt;terrain&gt;_maps</code> folder</li>
+<li>Make a copy of the <code>&lt;terrain&gt;.tmx</code> file in that folder or create a new map file from Tiled directly that uses the correct tileset and save it to the <code>&lt;terrain&gt;_maps</code> folder.</li>
 </ol>
-
 <h3>Prepare a map for AutoMapping</h3>
-
-<p>If you made a copy of the &lt;terrain&gt;.tmx file, you can skip this preparation. </p>
-
+<p>If you made a copy of the <code>&lt;terrain&gt;.tmx</code> file, you can skip this preparation. </p>
 <p>If you decided to create a new map file, use the flood fill (paint bucket) the 55th tile in the tileset. This is the farmland-tile which is rarely used for terrains so I have used this tile in the automapping rules as a filler tile. This means that the automapping rules will only replace matches patterns if they contain this farmland tile.</p>
-
 <h3>Automap Example</h3>
-
-<p>I&#39;m keeping this example simple on purpose. The best way to get a feel for Automapping is to active the AutoMap While Drawing feature and start placing tiles on the map.</p>
-
-<p><img src="automap_example_1-1.png" alt=""></p>
-
+<p>I'm keeping this example simple on purpose. The best way to get a feel for Automapping is to active the <code>AutoMap While Drawing</code> feature and start placing tiles on the map.</p>
+<p><img src="automap_example_1-1.png" /></p>
 <ul>
-<li>Bottom-left: 6-0 (rotated)</li>
-<li>Middle: 6-0</li>
-<li>Top-right: 5-0</li>
+<li><strong>Bottom-left: 6-0 (rotated)</strong></li>
+<li><strong>Middle: 6-0</strong></li>
+<li><strong>Top-right: 5-0</strong></li>
 </ul>
-
-<p>Pressing A once with the tiles set up like the example above will add tile 7-0 to the top-middle to connect the top-right and the middle tile.</p>
-
+<p>Pressing A once with the tiles set up like the example above will add tile <strong>7-0</strong> to the top-middle to connect the top-right and the middle tile.</p>
 <p>Check out the result below:</p>
-
-<p><img src="automap_example_1-2.png" alt=""></p>
-
-<p>Pressing A again with the additional tile 7-0 in place will add tile 5-0 to the bottom-middle </p>
-
-<p><img src="automap_example_1-3.png" alt=""></p>
-
-<p>With &#39;AutoMap While Drawing&#39; enabled, the above examples would be filled out automatically instead of having to hit &#39;A&#39; manually each time.</p>
-
+<p><img src="automap_example_1-2.png" /></p>
+<p>Pressing A again with the additional tile <strong>7-0</strong> in place will add tile <strong>5-0</strong> to the bottom-middle </p>
+<p><img src="automap_example_1-3.png" /></p>
+<p>With <code>AutoMap While Drawing</code> enabled, the above examples would be filled out automatically instead of having to hit 'A' manually each time.</p>
 <h2>Exporting for Daggerfall Unity</h2>
-
-<p><strong>ATTENTION WINDOWS USERS</strong></p>
-
-<p>Tiled on Windows has disabled Python scripting by default. In order to active Python scripting for Tiled, go the following link for <a href="https://www.python.org/downloads/release/python-375/">Python 3.7.5 releases</a> and download the Python version for the correct architecture.</p>
-
-<ul>
-<li>For Tiled&#39;s 64-bit version download the Windows X86-64 version.</li>
-<li>For Tiled&#39;s 32-bit version, download the Windows X86 version.</li>
-</ul>
-
-<p>Close Tiled, follow Python&#39;s installation instructions and after Python has been successfully installed, relaunch Tiled and go to Edit &gt; Preferences:</p>
-
-<p><img src="tiled_preferences.png" alt=""></p>
-
-<p>A new window will appear with several tabs, select the Plugins tab and check for the Python plugin in the list:</p>
-
-<p><img src="plugins_python.png" alt=""></p>
-
-<p>Make sure the box next to python.dll is ticked. If there is something wrong, the plugin will display a Stop-sign instead of the tickbox. If the box is already ticked, you&#39;re good to go.</p>
-
-<p>Go to your User folder and create a folder named &#39;.tiled&#39; and copy the file  &#39;dfutiles.py&#39; from the /scripts folder in this project to the .tiled folder. </p>
-
-<p>If you are having trouble creating the folder, I&#39;ve added a &#39;.tiled&#39; folder with the dfutiles.py script already in it. Copying that to your User folder should suffice to complete this step.</p>
-
-<p>Start Tiled, open your map and choose File &gt; Export As</p>
-
-<p><img src="tiled_export_as.png" alt=""></p>
-
-<p>You will get a file dialog window, in the Save as-section, select DFU JSON tiles (*.json) instead of All Files</p>
-
-<p><img src="tiled_export_dfu.png" alt=""></p>
-
-<p>Choose your filename and hit Save. This will create a JSON file that has a list of tile objects that you can copy and paste into your .RMB.json file that you got from Daggerfall Unity.</p>
-
+<p>Start Tiled, open your map and choose <code>File &gt; Export As</code></p>
+<p><img src="tiled_export_as.png" /></p>
+<p>You will get a file dialog window, in the <code>Save as</code> section, select <code>DFU JSON tiles (*.json)</code> instead of <code>All Files</code></p>
+<p><img src="tiled_export_dfu.png" /></p>
+<p>Choose your filename and hit <code>Save</code>. This will create a JSON file that has a list of tile objects that you can copy and paste into your <code>.RMB.json</code> file that you got from Daggerfall Unity.</p>
 <h2>Technical details</h2>
-
 <h3>Automapping setup</h3>
-
 <h4>Root folder</h4>
-
-<p>In the root folder of the project, you will find several .TSX files, these are the tilesets that are used in Tiled to paint the terrain. You will also find several .TMX files that follow a certain filename pattern: </p>
-
+<p>In the root folder of the project, you will find several <code>.TSX</code> files, these are the tilesets that are used in Tiled to paint the terrain. You will also find several <code>.TMX</code> files that follow a certain filename pattern: </p>
 <ul>
 <li>&lt;terrain&gt;_dirt.tmx</li>
 <li>&lt;terrain&gt;_grass.tmx</li>
 <li>&lt;terrain&gt;_rock.tmx</li>
 <li>&lt;terrain&gt;_water.tmx</li>
 </ul>
-
-<p>These TMX files contain the patterns that are recognised by the Automapping function. You can open these files in Tiled to see how the patterns are defined. By hiding the layers named <strong>regions_input</strong> and <strong>regions_output</strong> you can see the input and output. By hiding the <strong>output_terrain</strong> layer, you can see the expected input pattern by itself. </p>
-
+<p>These <code>.TMX</code> files contain the patterns that are recognised by the Automapping function. You can open these files in Tiled to see how the patterns are defined. By hiding the layers named <code>regions_input</code> and <code>regions_output</code> you can see the input and output. By hiding the <code>output_terrain</code> layer, you can see the expected input pattern by itself. </p>
 <h4>&lt;terrain&gt;_maps folders</h4>
+<p>The <code>&lt;terrain&gt;_maps</code> folders all have a file named <code>rules.txt</code>. This is the file that allows Tiled to apply the <code>.TMX</code> files mentioned in the previous section as automapping rules. It simply contains the paths to the appropriate <code>.TMX</code> files that define the automapping patterns.</p>
 
-<p>The &lt;terrain&gt;_maps folders all have a file named <strong>rules.txt</strong>. This is the file that allows Tiled to apply the TMX files mentioned in the previous section as automapping rules. It simply contains the paths to the appropriate TMX files that define the automapping patterns.</p>
-</body></html>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
