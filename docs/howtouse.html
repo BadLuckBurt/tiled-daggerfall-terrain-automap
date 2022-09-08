@@ -298,25 +298,15 @@ img {
 <h2>Setup</h2>
 <ol>
 <li>Download and install <a href="https://www.mapeditor.org/">Tiled 1.2.5</a></li>
-<li>Download and install <a href="https://www.dfworkshop.net/downloads/daggerfall-imaging/">Daggerfall Imaging 2</a></li>
 <li>
-Export Daggerfall's terrain textures to PNG images using <code>Daggerfall Imaging 2</code>
+Download the additional zip file and extract it to the <code>textures</code> folder, you should see the following:
 <ul>
-<li>TEXTURE.002 (Desert terrain Test)</li>
-<li>TEXTURE.003 (Desert Terrain Set Wint)</li>
-<li>TEXTURE.004 (Desert Terrain Rain)</li>
-<li>TEXTURE.102 (Mountain Terrain 7-5-96)</li>
-<li>TEXTURE.103 (Mountain Terrain Winter)</li>
-<li>TEXTURE.104 (Mountain Terrain Rain 7)</li>
-<li>TEXTURE.302 (Temperate Terrain Set)</li>
-<li>TEXTURE.303 (Woodland Terrain Snow)</li>
-<li>TEXTURE.402 (swamp Terrain Set)</li>
-<li>TEXTURE.403 (Swamp Terrain Winter)</li>
-<li>TEXTURE.404 (swamp Terrain Set)  
-</li>
+<li>TEXTURE.002_DesertTest</li>
+<li>TEXTURE.102_Mountain</li>
+<li>TEXTURE.302_Temperate</li>
+<li>TEXTURE.402_Swamp</li>
 </ul>
 </li>
-<li>Copy the resulting folders to the <code>textures</code> folder in this project (or use a symlink if you know how)</li>
 <li>Copy the <code>.tiled</code> folder from the project to your operating system's User folder.</li>
 </ol>
 <p><strong>ATTENTION WINDOWS USERS</strong></p>
@@ -359,7 +349,7 @@ Export Daggerfall's terrain textures to PNG images using <code>Daggerfall Imagin
 <p>If you made a copy of the <code>&lt;terrain&gt;.tmx</code> file, you can skip this preparation. </p>
 <p>If you decided to create a new map file, use the flood fill (paint bucket) the 55th tile in the tileset. This is the farmland-tile which is rarely used for terrains so I have used this tile in the automapping rules as a filler tile. This means that the automapping rules will only replace matches patterns if they contain this farmland tile.</p>
 <h3>Automap Example</h3>
-<p>I'm keeping this example simple on purpose. The best way to get a feel for Automapping is to active the <code>AutoMap While Drawing</code> feature and start placing tiles on the map.</p>
+<p>I'm keeping this example simple on purpose. The best way to get a feel for Automapping is to activate the <code>AutoMap While Drawing</code> feature and start placing tiles on the map.</p>
 <p><img src="automap_example_1-1.png" /></p>
 <ul>
 <li><strong>Bottom-left: 6-0 (rotated)</strong></li>
@@ -372,7 +362,8 @@ Export Daggerfall's terrain textures to PNG images using <code>Daggerfall Imagin
 <p>Pressing A again with the additional tile <strong>7-0</strong> in place will add tile <strong>5-0</strong> to the bottom-middle </p>
 <p><img src="automap_example_1-3.png" /></p>
 <p>With <code>AutoMap While Drawing</code> enabled, the above examples would be filled out automatically instead of having to hit 'A' manually each time.</p>
-<h2>Exporting for Daggerfall Unity</h2>
+<h2>Importing from Daggerfall Unity</h2>
+<h2>Exporting to Daggerfall Unity format</h2>
 <p>Start Tiled, open your map and choose <code>File &gt; Export As</code></p>
 <p><img src="tiled_export_as.png" /></p>
 <p>You will get a file dialog window, in the <code>Save as</code> section, select <code>DFU JSON tiles (*.json)</code> instead of <code>All Files</code></p>

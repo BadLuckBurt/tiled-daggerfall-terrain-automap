@@ -8,21 +8,12 @@ This is a collection of files to aid with the creation and editing of new and ex
 ## Setup
 
 1. Download and install [Tiled 1.2.5](https://www.mapeditor.org/)
-2. Download and install [Daggerfall Imaging 2](https://www.dfworkshop.net/downloads/daggerfall-imaging/)
-3. Export Daggerfall's terrain textures to PNG images using `Daggerfall Imaging 2`
-	- TEXTURE.002 (Desert terrain Test)
-    - TEXTURE.003 (Desert Terrain Set Wint)
-    - TEXTURE.004 (Desert Terrain Rain)
-    - TEXTURE.102 (Mountain Terrain 7-5-96)
-    - TEXTURE.103 (Mountain Terrain Winter)
-    - TEXTURE.104 (Mountain Terrain Rain 7)
-    - TEXTURE.302 (Temperate Terrain Set)
-    - TEXTURE.303 (Woodland Terrain Snow)
-    - TEXTURE.402 (swamp Terrain Set)
-    - TEXTURE.403 (Swamp Terrain Winter)
-    - TEXTURE.404 (swamp Terrain Set)  
-4. Copy the resulting folders to the `textures` folder in this project (or use a symlink if you know how)
-5. Copy the `.tiled` folder from the project to your operating system's User folder.
+2. Download the additional zip file and extract it to the `textures` folder, you should see the following:
+	- TEXTURE.002_DesertTest
+    - TEXTURE.102_Mountain
+    - TEXTURE.302_Temperate
+    - TEXTURE.402_Swamp
+3. Copy the `.tiled` folder from the project to your operating system's User folder.
 
 **ATTENTION WINDOWS USERS**
 
@@ -83,7 +74,7 @@ If you decided to create a new map file, use the flood fill (paint bucket) the 5
 
 ### Automap Example
 
-I'm keeping this example simple on purpose. The best way to get a feel for Automapping is to active the `AutoMap While Drawing` feature and start placing tiles on the map.
+I'm keeping this example simple on purpose. The best way to get a feel for Automapping is to activate the `AutoMap While Drawing` feature and start placing tiles on the map.
 
 ![](automap_example_1-1.png)
 

@@ -1,5 +1,6 @@
 from tiled import *
 
+
 class DfuTiles(Plugin):
 	@classmethod
 	def nameFilter(cls):
@@ -12,6 +13,8 @@ class DfuTiles(Plugin):
 	@classmethod
 	def write(cls, tileMap, fileName):
 		with open(fileName, 'w') as fileHandle:
+			line = "{data: [\n"
+			print(line, file=fileHandle)
 			for i in range(tileMap.layerCount()):
 				if isTileLayerAt(tileMap, i):
 					tileLayer = tileLayerAt(tileMap, i)
@@ -48,5 +51,7 @@ class DfuTiles(Plugin):
 							line += ','
 						print(line, file=fileHandle)
 
+			line = "]}"
+			print(line, file=fileHandle)
 
 		return True
